@@ -13,6 +13,14 @@ public class IndexController {
 	//Anotación de Spring que sirve para inyectar un componente registrado en el proyecto. (Beans).
 	
 	private IServicio service;
+	
+	
+	@Autowired 
+	public IndexController(IServicio service) {
+		this.service = service;
+	}
+
+
 
 	@GetMapping({"/index", "/", ""})
 	public String index(Model model) {
@@ -22,10 +30,6 @@ public class IndexController {
 		return "index";
 	}
 	
-	@Autowired 
-	public void setService(IServicio service) {
-		this.service = service;
-	}
 	
 	
 	
