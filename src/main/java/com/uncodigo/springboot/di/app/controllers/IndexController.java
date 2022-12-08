@@ -11,7 +11,7 @@ import com.uncodigo.springboot.di.app.models.service.IServicio;
 public class IndexController {
 	
 	//Anotación de Spring que sirve para inyectar un componente registrado en el proyecto. (Beans).
-	@Autowired 
+	
 	private IServicio service;
 
 	@GetMapping({"/index", "/", ""})
@@ -21,5 +21,12 @@ public class IndexController {
 		
 		return "index";
 	}
+	
+	@Autowired 
+	public void setService(IServicio service) {
+		this.service = service;
+	}
+	
+	
 	
 }
