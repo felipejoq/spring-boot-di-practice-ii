@@ -1,6 +1,5 @@
 package com.uncodigo.springboot.di.app.controllers;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,12 +13,10 @@ public class IndexController {
 	
 	private IServicio service;
 	
-	@Autowired 
+	// @Autowired <- Nueva funcionalidad. Al inyectar por Constructor se puede obviar la anotación. 
 	public IndexController(IServicio service) {
 		this.service = service;
 	}
-
-
 
 	@GetMapping({"/index", "/", ""})
 	public String index(Model model) {
@@ -28,8 +25,5 @@ public class IndexController {
 		
 		return "index";
 	}
-	
-	
-	
 	
 }
