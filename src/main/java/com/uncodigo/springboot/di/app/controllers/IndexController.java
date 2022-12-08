@@ -5,14 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.uncodigo.springboot.di.app.models.service.MiServicio;
+import com.uncodigo.springboot.di.app.models.service.IServicio;
 
 @Controller
 public class IndexController {
 	
 	//Anotación de Spring que sirve para inyectar un componente registrado en el proyecto. (Beans).
 	@Autowired 
-	private MiServicio service;
+	private IServicio service;
 
 	@GetMapping({"/index", "/", ""})
 	public String index(Model model) {
