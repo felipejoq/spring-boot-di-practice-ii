@@ -14,7 +14,6 @@ public class IndexController {
 	
 	private IServicio service;
 	
-	
 	@Autowired 
 	public IndexController(IServicio service) {
 		this.service = service;
